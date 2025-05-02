@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Document</title>
+  <style>
+
+    .box {
+      width: 100px;
+      height: 100px;
+      animation: colorChange 4s;
+    }
+
+    @keyframes colorChange {
+      from { background-color: rgb(14, 122, 146); }
+      to { background-color: rgb(15, 130, 90); }
+    }
+
+   
+    .multi {
+      width: 100px;
+      height: 100px;
+      position: relative;
+      animation: moveColor 5s forwards;
+    }
+
+    @keyframes moveColor {
+      0%   { left: 0; background: red; }
+      25%  { left: 50px; background: orange; }
+      50%  { left: 100px; background: yellow; }
+      100% { left: 200px; background: green; }
+    }
+
+    .pulse {
+      width: 80px;
+      height: 80px;
+      border-radius: 50%;
+      background: blue;
+      animation: pulseAnim 1s infinite alternate;
+    }
+
+    @keyframes pulseAnim {
+      from { transform: scale(1); }
+      to   { transform: scale(1.2); }
+    }
+
+    .hover-btn:hover {
+      background-color: lightgreen;
+    }
+
+    input:focus {
+      border: 2px solid royalblue;
+      outline: none;
+    }
+
+    li:first-child {
+      color: red;
+    }
+
+    h2::before {
+      content: "🔹 ";
+    }
+
+    p::first-letter {
+      font-size: 200%;
+      color: darkorange;
+    }
+
+    
+    li::marker {
+      content: "➤ ";
+      color: purple;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="box"></div>
+  <br>
+
+  <div class="multi"></div>
+  <br>
+
+  <div class="pulse"></div>
+  <br>
+
+  <button class="hover-btn">Hover Me</button>
+  <br>
+
+  <input type="text" placeholder="Focus me">
+  <br>
+
+  <ul>
+    <li>First item</li>
+    <li>Second item</li>
+  </ul>
+  <br>
+
+  <h2>Introduction</h2>
+  <br>
+
+  <p>Learning CSS is fun and powerful.</p>
+  <br>
+
+  <ul>
+    <li>HTML</li>
+    <li>CSS</li>
+  </ul>
+  <br>
+
+  <button class="shine-btn">Click Me</button>
+
+<style>
+  .shine-btn {
+    position: relative;
+    padding: 12px 30px;
+    background: #3498db;
+    color: white;
+    border: none;
+    overflow: hidden;
+    font-size: 16px;
+  }
+
+  .shine-btn::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: -75%;
+    width: 50%;
+    height: 100%;
+    background: rgba(255, 255, 255, 0.3);
+    transform: skewX(-20deg);
+  }
+
+  .shine-btn:hover::after {
+    animation: slide-shine 0.75s linear forwards;
+  }
+
+  @keyframes slide-shine {
+    to { left: 125%; }
+  }
+</style>
+</body>
+</html>
